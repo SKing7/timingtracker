@@ -1,8 +1,8 @@
 {
   "name": "timingtracker",
   "version": "0.0.1",
-  "description": "",
-  "homepage": "",
+  "description": "timing tracker for web ",
+  "homepage": "https://github.com/SKing7/timingtracker",
   "devDependencies": {
     "grunt": ">= 0.4.1",
     "coffee-script": ">= 1.6.3",

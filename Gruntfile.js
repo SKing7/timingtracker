@@ -12,7 +12,7 @@ module.exports = function(grunt) {
     depVars: depVars.join(","),
     depsStr: depsStr.join(","),
     pkg: packagejson,
-    banner: '/*\n * <%= pkg.title || pkg.name %> v<%= pkg.version %> | JavaScript Heatmap Library\n *\n * Copyright 2008-2014 Patrick Wied <heatmapjs@patrick-wied.at> - All rights reserved.\n * Dual licensed under MIT and Beerware license \n *\n * :: <%= grunt.template.today("yyyy-mm-dd HH:MM") %>\n */\n',
+    banner: '/*\n * <%= pkg.title || pkg.name %> v<%= pkg.version %> | JavaScript TimingTracker Library\n *\n * Copyright 2015 liuzhe.pt<@alibaba-inc.com> - All rights reserved.\n * Dual licensed under MIT and Beerware license \n *\n * :: <%= grunt.template.today("yyyy-mm-dd HH:MM") %>\n */\n',
     concat: {
       options: {
         banner: '/*global define*/\n<%= banner %>'+';(function (name, factory) {\nif (typeof define === "function" && define.amd) {\n    define(name, [<%= depsStr %>], factory);\n  } \n})("<%= pkg.moduleName %>", function (<%= depVars %>) {\n',
@@ -92,6 +92,6 @@ module.exports = function(grunt) {
   //grunt.loadNpmTasks('grunt-shell');
 
 
-  grunt.registerTask('default', ['concat', 'jshint', 'uglify', 'watch']);
-  grunt.registerTask('publishToNpm', ['concat', 'jshint', 'uglify', 'copy:npmPreRelease', 'shell:npmRelease']);
+  grunt.registerTask('default', ['concat', 'jshint', 'watch']);
+  grunt.registerTask('build', ['concat', 'jshint', 'uglify']);
 };
