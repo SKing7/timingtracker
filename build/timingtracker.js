@@ -5,7 +5,7 @@
  * Copyright 2015 liuzhe.pt<@alibaba-inc.com> - All rights reserved.
  * Dual licensed under MIT and Beerware license 
  *
- * :: 2015-11-20 17:14
+ * :: 2015-11-20 17:29
  */
 ;(function (name, factory) {
 if (typeof define === "function" && define.amd) {
@@ -267,6 +267,9 @@ proto.push = function (type, key, data) {
   var prefix = prefixMap[type] || '';
   q[type] = q[type] || {};
   q[type][prefix + key] = encodeURIComponent(data);
+};
+proto.add = function (key, data) {
+  this.push('rt', key, data);
 };
 //打点开始
 proto.start = function (id) {

@@ -36,6 +36,9 @@ proto.push = function (type, key, data) {
   q[type] = q[type] || {};
   q[type][prefix + key] = encodeURIComponent(data);
 };
+proto.add = function (key, data) {
+  this.push('rt', key, data);
+};
 //打点开始
 proto.start = function (id) {
   var key = getMarkerKey(id);
