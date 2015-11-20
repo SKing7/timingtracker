@@ -1,6 +1,14 @@
 ##TimingTracker
 前端性能收集 Javacript Library
 
+##统计数据类型
+####自定义打点
+收集打点时间间隔的数据
+####浏览器性能接口数据
+主要是performance.timing
+相关代码在`src/perfTiming.js`
+####Ajax数据
+通过`XMLHttpRequest.readyState`得到各个状态的耗时
 ###Usage
 [M站性能收集规范](http://wiki.amap.alibaba-inc.com/M:%E6%95%B0%E6%8D%AE%E6%94%B6%E9%9B%86%E8%A7%84%E8%8C%83)
 
@@ -28,8 +36,3 @@ require('common/timingtracker', function ($tracker) {
   $tracker.push('rt', 'gl_android_ugi_fa', $tracker.now() - trackStartTime);
 })
 ```
-####浏览器性能接口数据
-主要是performance.timing
-相关代码在`src/perfTiming.js`
-####Ajax数据
-通过`XMLHttpRequest.readyState`得到各个状态的耗时
