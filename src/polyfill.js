@@ -5,12 +5,12 @@
   }
   if (!w.performance.now) {
     var s = Date.now ? Date.now() : +(new Date());
-    if (performance.timing && performance.timing) {
+    if (performance.timing && performance.timing.navigationStart) {
       s = performance.timing.navigationStart;
     }
     w.performance.now = function() {
       var n = Date.now ? Date.now() : +(new Date());
-      return n-s;
+      return n - s;
     };
   }
 }());
