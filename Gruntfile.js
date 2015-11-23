@@ -66,8 +66,8 @@ module.exports = function(grunt) {
         tasks: ['jshint:gruntfile']
       },
       dist: {
-        files: packagejson.buildFiles.concat('Gruntfile.js'),
-        tasks: ['concat', 'jshint', 'uglify', 'copy:toM']
+        files: packagejson.buildFiles,
+        tasks: ['concat', 'jshint', 'uglify']
       }
     },
     copy: {
